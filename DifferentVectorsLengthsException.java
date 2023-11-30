@@ -5,14 +5,14 @@ public class DifferentVectorsLengthsException  extends Exception{
     
     public DifferentVectorsLengthsException(){};
 
-    public DifferentVectorsLengthsException(String errorMessege)
+    public DifferentVectorsLengthsException(String errorMessage)
     {
-        super(errorMessege);
+        super(errorMessage);
     }
 
-    public DifferentVectorsLengthsException(String errorMessege, ArrayList<Integer> vectorLengthsNew)
+    public DifferentVectorsLengthsException(String errorMessage, ArrayList<Integer> vectorLengthsNew)
     {
-        super(errorMessege);
+        super(errorMessage);
         vectorLengths = vectorLengthsNew;
     }
 
