@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Vector{
-    private List<Integer> vectorList = new ArrayList<Integer>();
+    private List<Integer> intList = new ArrayList<Integer>();
 
     public Vector(String string)
     {
@@ -14,13 +14,31 @@ public class Vector{
         String[] stringArray = string.split(",");
         for(String element : stringArray){
             if(element.matches( "\\d+")){
-                vectorList.add(Integer.parseInt(element));
+                intList.add(Integer.parseInt(element));
             }
         }
     }
 
+    public String vectorIntoString()
+    {
+        String result = "";
+        for(int i = 0;i <  intList.size();i++)
+        {
+            if(i < intList.size()-1)
+            {
+                result += (Integer.toString(intList.get(i)) + ", ");
+            }
+            else
+            {
+                result += Integer.toString(intList.get(i));
+            }
+            
+        }
+        return result;
+    }
+
     public int returnLength(){
-        return vectorList.size();
+        return intList.size();
     }
 
     public boolean isEqualLength(Vector secondVector){
@@ -30,6 +48,6 @@ public class Vector{
     public static void main(String[] args) {
         String exampleString = "2,3,5,6,$%,7a,8";
         Vector vector = new Vector(exampleString);
-        System.out.println(vector.vectorList);
+        System.out.println(vector.vectorIntoString());
     }
 }
